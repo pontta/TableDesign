@@ -43,24 +43,29 @@
     </style>
 </head>
 <body>
-    <h1>Equation Solver</h1>
+    <h1>TableDesign</h1>
     <form method="POST">
-        <label for="A">Enter A:</label>
+        <label for="A">Enter width A:</label>
         <input type="text" id="A" name="A" required>
         <br>
-        <label for="B">Enter B:</label>
+        <label for="B">Enter height B:</label>
         <input type="text" id="B" name="B" required>
         <br>
+        <label for="a">Enter fixture point's distance from sides a:</label>
+        <input type="text" id="a" name="a" required>
+        <br>
+        
         <input type="submit" value="Solve">
     </form>
     {% if x is not none and y is not none %}
         <h2>Solution:</h2>
         <div class="result">
+            <p>distance a = {{a}}</p>
             <p>x = {{ x }}</p>
             <p>y = {{ y }}</p>
             <p>Angle α = {{ alpha }}°</p>
             <p>A = {{ A }}, B = {{ B }}</p>
-            <h3>Graphical Illustration:</h3>
+            <h3>Graphical illustration:</h3>
             <img src="data:image/png;base64,{{ plot_url }}" alt="Rectangle and Intersection Point">
         </div>
     {% endif %}

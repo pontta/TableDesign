@@ -9,9 +9,8 @@ import base64
 
 app = Flask(__name__)
 
-def equations(vars, A, B):
+def equations(vars, A, B, a):
     x, y = vars
-    a = 3
     eq1 = x/y - (B - y)/(A - x)
     eq2 = (2*a)**2 - (x**2 + y**2)
 
@@ -29,8 +28,9 @@ def index():
     if request.method == 'POST':
         A = float(request.form['A'])
         B = float(request.form['B'])
+        a = float(request.form['a'])
         initial_guess = [1, 1]
-        solution1 = fsolve(lambda vars: equations(vars, A, B), initial_guess)
+        solution1 = fsolve(lambda vars: equations(vars, A, B, a), initial_guess)
         x_sol = solution1[0]
         y_sol = solution1[1]
         k = np.divide(x_sol,y_sol)
@@ -70,7 +70,7 @@ def index():
         img.seek(0)
         plot_url = base64.b64encode(img.getvalue()).decode()
         
-        return render_template('index.html', x1 = x1_sol, y1 = y1_sol, x=x_sol, y=y_sol, alpha=alpha, A=A, B=B, plot_url=plot_url)
+        return render_template('index.html', a = a, x1 = x1_sol, y1 = y1_sol, x=x_sol, y=y_sol, alpha=alpha, A=A, B=B, plot_url=plot_url)
     return render_template('index.html', x=None, y=None, alpha=None)
 
 if __name__ == '__main__':

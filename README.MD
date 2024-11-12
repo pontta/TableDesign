@@ -12,7 +12,13 @@ cd {into your directory where you want to make the clone directory}
 git clone https://github.com/pontta/TableDesing.git
 cd TableDesing
 python -m venv venv
+```
+On Windows
+```bash
 venv\Scripts\activate // on Windows
+```
+On Linux
+```bash
 source venv/bin/activate // on Linux
 ```
 
@@ -29,3 +35,7 @@ To run the application, use
 python app.py
 ```
 Then open your browser and go to http://127.0.0.1:5000/.
+
+## Usage
+You can feed the measures of the table in A and B directions and click 'Solve' button.
+!TableDesign GUI of TableDesign
