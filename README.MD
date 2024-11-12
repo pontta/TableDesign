@@ -9,7 +9,7 @@ Using a virtual environment is important because it allows you to create an isol
 ## Cloning repository and setting up virtual environment
 ```bash
 cd {into your directory where you want to make the clone directory}
-git clone https://github.com/pontta/TableDesing.git
+git clone https://github.com/pontta/TableDesign.git
 cd TableDesing
 python -m venv venv
 ```
