@@ -38,4 +38,4 @@ Then open your browser and go to http://127.0.0.1:5000/.
 
 ## Usage
 You can feed the measures of the table in A and B directions and click 'Solve' button.
-!TableDesign GUI of TableDesign
+![GUI of TableDesign](images/TableDesign.png "GUI of TableDesign")
