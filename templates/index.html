@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equation Solver</title>
+    <style>
+        body {
+            background-color: #121212; /* Dark background */
+            color: #ffffff; /* Light text */
+            font-family: Arial, sans-serif;
+        }
+        h1, h2, h3 {
+            color: #ffffff; /* Light color for headings */
+        }
+        input[type="text"], input[type="submit"] {
+            background-color: #333333; /* Dark input fields */
+            color: #ffffff; /* Light text in input fields */
+            border: 1px solid #555555; /* Slightly lighter border */
+            padding: 10px;
+            margin: 5px 0;
+            width: 100%;
+        }
+        input[type="submit"] {
+            cursor: pointer;
+            background-color: #007BFF; /* Button color */
+            max-width: 50%;
+            align-self:center;
+            border: none;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3; /* Darker button on hover */
+        }
+        img {
+            max-width: 100%; /* Responsive image */
+            height: auto;
+        }
+        .result {
+            background-color: #222222; /* Dark background for results */
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Equation Solver</h1>
+    <form method="POST">
+        <label for="A">Enter A:</label>
+        <input type="text" id="A" name="A" required>
+        <br>
+        <label for="B">Enter B:</label>
+        <input type="text" id="B" name="B" required>
+        <br>
+        <input type="submit" value="Solve">
+    </form>
+    {% if x is not none and y is not none %}
+        <h2>Solution:</h2>
+        <div class="result">
+            <p>x = {{ x }}</p>
+            <p>y = {{ y }}</p>
+            <p>Angle α = {{ alpha }}°</p>
+            <p>A = {{ A }}, B = {{ B }}</p>
+            <h3>Graphical Illustration:</h3>
+            <img src="data:image/png;base64,{{ plot_url }}" alt="Rectangle and Intersection Point">
+        </div>
+    {% endif %}
+</body>
+</html>
