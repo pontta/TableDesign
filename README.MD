@@ -15,11 +15,11 @@ python -m venv venv
 ```
 On Windows
 ```bash
-venv\Scripts\activate // on Windows
+venv\Scripts\activate
 ```
 On Linux
 ```bash
-source venv/bin/activate // on Linux
+source venv/bin/activate
 ```
 
 ## Requirements
