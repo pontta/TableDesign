@@ -3,5 +3,7 @@ for i in range(10):
     print(i)
     print("joo")
 print("jee")
+print("myös joo")
+
 
 
